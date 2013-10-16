@@ -17,7 +17,7 @@ class Application < Sinatra::Base
     serve '/js', from: 'assets/javascripts'
     serve '/fonts', from: 'assets/fonts'
 
-    css :application, '/css/application.css', %w(/css/reset.css /css/index.css /css/current.css)
+    css :application, '/css/application.css', %w(/css/reset.css /css/index.css /css/modal.css /css/current.css)
     js :application, '/js/application.js', %w( /js/jquery-1.9.1.js  /js/order.js /js/google_maps.js)
 
     css_compression :sass
@@ -30,7 +30,7 @@ class Application < Sinatra::Base
 
   post '/orders.json' do
 
-    phones = %w(79037928959)
+    phones = %w(79163808020)
 
     message = "#{params[:order][:username]}. #{params[:order][:phone]}"
 
@@ -43,7 +43,7 @@ class Application < Sinatra::Base
               password: 'avv6rqE',
               phone: phone.to_s,
               text: message,
-              sender_name: 'courier'
+              sender_name: 'gorkom5'
           }
       )
     end
